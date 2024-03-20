@@ -1,25 +1,24 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    # Check if the input is not a string or if it's None, then return 0.
+    # Check if the input is not a string; return 0 for invalid input.
     if not isinstance(roman_string, str):
         return 0
-    
-    # Dictionary to map Roman numerals to their integer values.
-    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-                  'C': 100, 'D': 500, 'M': 1000}
-    
-    # Initialize integer to store the total value.
-    integer_value = 0
-    
-    # Loop through each character in the Roman numeral string.
-    for i in range(len(roman_string)):
-        # If this is the last character, or if the current numeral is equal to
-        # or greater than the numeral following it, add its value.
-        if i == len(roman_string) - 1 or roman_dict[roman_string[i]] >= roman_dict[roman_string[i + 1]]:
-            integer_value += roman_dict[roman_string[i]]
-        # Otherwise, subtract its value (for cases like IV, IX, etc.).
+    # Initialize total to accumulate the numerical value.
+    total_value = 0
+    # Initialize num to keep track of the numeric value of the current Roman numeral.
+    current_roman_value = 0
+    # A dictionary mapping each Roman numeral character to its integer value.
+    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    # Iterate through the Roman numeral string in reverse order.
+    for idx in reversed(roman_string):
+        # Get the integer value of the current Roman numeral character.
+        current_roman_value = roman_dict[idx]
+        # Add the value of the current numeral to the total if the total so far is less
+        # than 5 times the current numeral's value. Otherwise, subtract it.
+        # This handles the Roman numeral subtraction rule (e.g., IV is 4, IX is 9).
+        if total_value < current_roman_value * 5:
+            total_value += current_roman_value
         else:
-            integer_value -= roman_dict[roman_string[i]]
-    
-    # Return the total value as an integer.
-    return integer_value
+            total_value -= current_roman_value
+    # Return the total calculated value.
+    return total_value
