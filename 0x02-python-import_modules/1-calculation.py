@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
+    from calculator_1 import add, sub, mul, div
     a = 10  # Assign the value 10 to variable 'a'
     b = 5   # Assign the value 5 to variable 'b'
     # Perform operations using the imported functions and print the results.
