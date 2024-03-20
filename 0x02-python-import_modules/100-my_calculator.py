@@ -2,8 +2,7 @@
 if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
-
-    # Check if the number of arguments is exactly 3 (script name + 3 arguments = 4 total)
+    # Check if the number of arguments is exactly 4
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
