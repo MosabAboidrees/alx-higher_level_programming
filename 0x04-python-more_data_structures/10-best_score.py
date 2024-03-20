@@ -1,8 +1,19 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    # Check if the dictionary is not None and not empty
-    if a_dictionary and len(a_dictionary) > 0:
-        # Use max function with key argument to find the key with the maximum value
-        return max(a_dictionary, key=a_dictionary.get)
-    # If the dictionary is None or empty, return None
-    return None
+    # Check if the dictionary is empty or None. If so, return None.
+    if a_dictionary == {} or a_dictionary is None:
+        return None
+    # Convert dictionary keys to a list and initialize variables
+    # to track the largest value and corresponding key.
+    keys = list(a_dictionary)
+    best_value = a_dictionary[keys[0]]  # Assume the first key has the largest value.
+    best_key = keys[0]  # The key associated with the largest value.
+    # Iterate over the keys in the dictionary.
+    for key in keys:
+        # If the current key's value is greater than the largest known value,
+        # update big_value and big_key to these new maximums.
+        if a_dictionary[key] > best_value:
+            best_value = a_dictionary[key]
+            best_key = key
+    # Return the key associated with the largest value.
+    return best_key
