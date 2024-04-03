@@ -44,12 +44,19 @@ class Node:
 
 class SinglyLinkedList:
     """Defines a singly linked list."""
+
     def __init__(self):
         """Initialize the singly linked list with no head node."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """Insert a new Node into the list in sorted (ascending) order."""
+        """Insert a new Node into the list in sorted (ascending) order.
+        The node is inserted into the list at the correct
+        ordered numerical position.
+        Args:
+            value (Node): The new Node to insert.
+        """
+
         new_node = Node(value)  # Create a new Node with the given value
         if self.__head is None or self.__head.data >= value:
             # If list is empty or new node should be first, insert it at the beginning
