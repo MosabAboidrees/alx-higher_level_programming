@@ -4,8 +4,16 @@
 
 class Node:
     """Defines a node of a singly linked list."""
+
     def __init__(self, data, next_node=None):
-        """Initialize a Node with data and optionally a reference to the next node."""
+        """Initialize a Node with data and optionally
+        a reference to the next node.
+
+        Args:
+            data (int): The data of the new Node.
+            next_node (Node): The next node of the new Node.
+        """
+
         self.data = data  # Set the node's data
         self.next_node = next_node  # Set the next node; defaults to None
 
