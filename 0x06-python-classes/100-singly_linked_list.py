@@ -7,11 +7,7 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """Initialize a Node with data and optionally
-        a reference to the next node.
-        Args:
-            data (int): The data of the new Node.
-            next_node (Node): The next node of the new Node.
-        """
+        a reference to the next node."""
         self.data = data  # Set the node's data
         self.next_node = next_node  # Set the next node; defaults to None
 
@@ -42,18 +38,12 @@ class Node:
 
 class SinglyLinkedList:
     """Defines a singly linked list."""
-
     def __init__(self):
         """Initialize the singly linked list with no head node."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """Insert a new Node into the list in sorted (ascending) order.
-        The node is inserted into the list at the correct
-        ordered numerical position.
-        Args:
-            value (Node): The new Node to insert.
-        """
+        """Set the next node, ensuring it is either None or a Node object."""
         new_node = Node(value)  # Create a new Node with the given value
         if self.__head is None or self.__head.data >= value:
             # If list is empty or new node should be first,
