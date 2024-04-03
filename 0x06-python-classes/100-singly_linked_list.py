@@ -5,7 +5,8 @@
 class Node:
     """Defines a node of a singly linked list."""
     def __init__(self, data, next_node=None):
-        """Initialize a Node with data and optionally a reference to the next node."""
+        """Initialize a Node with data and
+        optionally a reference to the next node."""
         self.data = data  # Set the node's data
         self.next_node = next_node  # Set the next node; defaults to None
 
@@ -33,6 +34,7 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """Defines a singly linked list."""
     def __init__(self):
@@ -43,23 +45,26 @@ class SinglyLinkedList:
         """Insert a new Node into the list in sorted (ascending) order."""
         new_node = Node(value)  # Create a new Node with the given value
         if self.__head is None or self.__head.data >= value:
-            # If list is empty or new node should be first, insert it at the beginning
+            # If list is empty or new node should be first,
+            # insert it at the beginning
             new_node.next_node = self.__head
             self.__head = new_node
         else:
             # Find the insertion point
             current = self.__head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node is not None and
+            current.next_node.data < value:
                 current = current.next_node
             # Insert new node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
-        """Return a string representation of the list, one node's data per line."""
+        """Return a string representation of the list,
+        one node's data per line."""
         current = self.__head
         nodes = []
         while current is not None:
             nodes.append(str(current.data))  # Add the node's data to the list
             current = current.next_node
-        return "\n".join(nodes)  # Join all node data strings, separated by newlines
+        return "\n".join(nodes)  # Join all node data strings
