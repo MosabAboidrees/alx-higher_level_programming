@@ -33,7 +33,7 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        """Set the next node, 
+        """Set the next node,
         ensuring it is either None or a Node object."""
         if not (value is None or isinstance(value, Node)):
             raise TypeError("next_node must be a Node object")
@@ -70,7 +70,8 @@ class SinglyLinkedList:
             tmp.next_node = new
 
     def __str__(self):
-        """Return a string representation of the list, one node's data per line."""
+        """Return a string representation of the list,
+        one node's data per line."""
         values = []
         tmp = self.__head
         while tmp is not None:
