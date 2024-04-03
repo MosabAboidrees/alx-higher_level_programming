@@ -59,24 +59,26 @@ class SinglyLinkedList:
 
         new_node = Node(value)  # Create a new Node with the given value
         if self.__head is None or self.__head.data >= value:
-            # If list is empty or new node should be first, insert it at the beginning
+            # If list is empty or new node should be first,
+            # insert it at the beginning
             new_node.next_node = self.__head
             self.__head = new_node
         else:
             # Find the insertion point
             current = self.__head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node is not None
+            and current.next_node.data < value:
                 current = current.next_node
             # Insert new node
             new_node.next_node = current.next_node
             current.next_node = new_node
 
     def __str__(self):
-        """Return a string representation of the list, one node's data per line."""
+        """Return a string representation of the list,
+        one node's data per line."""
         current = self.__head
         nodes = []
         while current is not None:
             nodes.append(str(current.data))  # Add the node's data to the list
             current = current.next_node
-        return "\n".join(nodes)  # Join all node data strings, separated by newlines
-
+        return "\n".join(nodes)  # Join all node data strings
