@@ -3,10 +3,20 @@
 
 
 class Node:
-    """Defines a node of a singly linked list."""
+    """Defines a node of a singly linked list.
+    Attributes:
+        data (int): The data held by the node.
+        next_node (Node): The next node in the list.
+    """
+    
     def __init__(self, data, next_node=None):
         """Initialize a Node with data and
-        optionally a reference to the next node."""
+        optionally a reference to the next node.
+
+        Args:
+            data (int): The data of the node.
+            next_node (Node, optional): The next node in the list. Defaults to None.
+        """
         self.data = data  # Set the node's data
         self.next_node = next_node  # Set the next node; defaults to None
 
@@ -36,13 +46,27 @@ class Node:
 
 
 class SinglyLinkedList:
-    """Defines a singly linked list."""
+    """Defines a singly linked list with methods for
+    sorted insertion and string representation.
+    
+    This class provides the functionality to maintain 
+    a sorted singly linked list. Nodes can be inserted in an order, 
+    and the list can be represented as a string.
+    """
+    
     def __init__(self):
         """Initialize the singly linked list with no head node."""
         self.__head = None
 
     def sorted_insert(self, value):
-        """Insert a new Node into the list in sorted (ascending) order."""
+        """Insert a new Node into the list in sorted (ascending) order.
+        
+        This method creates a new Node with the provided value 
+        and inserts it into the list while maintaining sorted order.
+        
+        Args:
+            value (int): The value to insert into the list.
+        """
         new_node = Node(value)  # Create a new Node with the given value
         if self.__head is None or self.__head.data >= value:
             # If list is empty or new node should be first,
