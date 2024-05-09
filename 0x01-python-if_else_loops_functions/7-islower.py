@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def islower(c):
     """
-    Check if a character is a lowercase letter.    
+    Check if a character is a lowercase letter.
     :param c: Character to check
     :return: True if c is lowercase, False otherwise
     """
