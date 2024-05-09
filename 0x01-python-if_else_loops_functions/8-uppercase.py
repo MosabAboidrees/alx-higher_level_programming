@@ -7,5 +7,5 @@ def uppercase(str):
         else:
             # Print non-lowercase characters as they are
             temp = ord(char)
-        print("{:c}".format(ord(char)), end='')
+        print("{:c}".format(ord(temp)), end='')
     print()  # Print a new line at the end of the string
