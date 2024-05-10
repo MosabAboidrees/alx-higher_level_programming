@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module defines the print_square function that prints a square of the character '#'.
+This module defines the print_square function that prints
+a square of the character '#'.
 """
 
 
@@ -23,6 +24,7 @@ def print_square(size):
 
     for _ in range(size):
         print('#' * size)
+
 
 if __name__ == "__main__":
     import doctest
