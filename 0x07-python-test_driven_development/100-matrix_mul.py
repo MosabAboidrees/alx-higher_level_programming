@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Module for matrix_mul method."""
+
+
 def matrix_mul(m_a, m_b):
     """
     Multiply two matrices and return the result.
