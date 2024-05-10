@@ -4,8 +4,9 @@ This module provides a function that divides all elements
 in a matrix by a given divisor.
 """
 
+
 def matrix_divided(matrix, div):
-    """ 
+    """
     Divides each element of a matrix by a div,
     rounding the result to 2 decimal places.
 
@@ -18,13 +19,12 @@ def matrix_divided(matrix, div):
         each element divided by the divisor.
 
     Raises:
-        TypeError: If matrix elements are not lists of integers or floats, 
-                   if any element in these lists is not an integer or float, 
-                   if the divisor is not a number, or if rows of the matrix
-                   are not the same size.
+        TypeError: If matrix elements are not lists of integers or floats,
+        if any element in these lists is not an integer or float,
+        if the divisor is not a number, or if rows of the matrix
+        are not the same size.
         ZeroDivisionError: If the divisor is zero.
     """
-
     if not isinstance(div, (int, float)):
         raise TypeError("divisor must be a number")
 
