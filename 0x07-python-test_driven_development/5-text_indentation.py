@@ -1,49 +1,48 @@
 #!/usr/bin/python3
 """
-This module contains a function that processes text
-by inserting two new lines after each '.', '?', or ':',
-while removing spaces at the beginning or end of each line and
-immediately following these punctuation marks.
+This module contains a function that formats text by inserting two new lines
+after each '.', '?', or ':', and removes spaces at the beginning or end of
+each resulting line.
 """
 
-
 def text_indentation(text):
-    """
-    Processes the input text to add two new lines after
-    '.', '?', and ':' punctuation marks and ensures there
-    are no spaces at the beginning or end of each printed segment.
+    """Prints text with two new lines after each '.', '?', or ':'.
+    Leading and trailing spaces around these punctuation marks are removed.
 
     Args:
-        text (str): The text to process.
+        text (str): The input text to format.
 
     Raises:
         TypeError: If the input is not a string.
     """
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    # Strip leading and trailing whitespaces from the entire text first
-    text = text.strip()
+    # Create a copy of the input text to avoid modifying the original string
+    formatted_text = text[:]
 
-    i = 0
-    start = 0  # Start index for each segment
-    while i < len(text):
-        # Print each character until a punctuation is found
-        if text[i] in ".?:":
-            # Print the segment up to and including the current character
-            # Strip right side spaces from each segment before the punctuation
-            print(text[start:i+1].rstrip())
-            print()  # Print the two new lines
-            start = i + 1  # Update start to the character after punctuation
-            # Skip any spaces immediately after the punctuation
-            while start < len(text) and text[start] == ' ':
-                start += 1
-            i = start - 1  # Reset i to continue from the new start position
-        i += 1
+    # Iterate through each punctuation mark
+    # that should be followed by new lines
+    for delimiter in ".?:":  # Delimiters to check
+        # Split the text by the current
+        # delimiter and strip spaces around splits\
+        segments = formatted_text.split(delimiter)
+        formatted_text = ""
+        for segment in segments:
+            segment = segment.strip(" ")
+            # Check if the formatted_text is empty
+            if formatted_text == "":
+                # If formatted_text is empty,
+                # simply add the current segment and delimiter
+                formatted_text = segment + delimiter
+            else:
+                # If formatted_text is not empty, append two new lines,
+                # the segment, and the delimiter
+                formatted_text += "\n\n" + segment + delimiter
 
-    # If there's any remaining text after the last punctuation, print it
-    if start < len(text):
-        print(text[start:].rstrip())  # Ensure to strip trailing spaces
+    # Print the final formatted text, slicing off the
+    # extra new lines added at the end
+    print(formatted_text[:-3],end="")
 
 
 if __name__ == "__main__":
