@@ -4,6 +4,7 @@ This module provides a function that divides all elements
 in a matrix by a given divisor.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides each element of a matrix by div,
@@ -30,21 +31,22 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    error_msg_type = "matrix must be a matrix (list of lists) of integers/floats"
+    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
 
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError(error_msg_type)
+    if not isinstance(matrix, list) or not all(isinstance(row, list)
+                                               for row in matrix):
+        raise TypeError(error_msg)
 
     if len(matrix) == 0:
-        raise TypeError(error_msg_type)
+        raise TypeError(error_msg)
 
     row_length = None  # Initialize without a set length
 
     for row in matrix:
         if not row:  # Checks if the row is empty
-            raise TypeError(error_msg_type)
+            raise TypeError(error_msg)
         if not all(isinstance(num, (int, float)) for num in row):
-            raise TypeError(error_msg_type)
+            raise TypeError(error_msg)
         if row_length is not None and len(row) != row_length:
             raise TypeError("Each row of the matrix must have the same size")
         row_length = len(row)  # Set the row length after validating
