@@ -5,6 +5,7 @@ The function ensures that the numbers are either integers or floats,
 otherwise, it raises a TypeError.
 """
 
+
 def add_integer(a, b=98):
     """
     Add two integers or floats.
