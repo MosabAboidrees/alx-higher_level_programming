@@ -53,7 +53,7 @@ def matrix_mul(m_a, m_b):
     result = [[] for i in range(len(m_a))]
 
     for row in range(len(m_a)):  # rows of m_a
-        for col in range(len(m_b[0])): # columns of m_b
+        for col in range(len(m_b[0])):  # columns of m_b
             # c is the sum of products of the row of m_a and the column of m_b
             c = 0
             for k in range(len(m_b)):
