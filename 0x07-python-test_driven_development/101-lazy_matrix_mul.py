@@ -22,4 +22,4 @@ def lazy_matrix_mul(m_a, m_b):
         list: The result of multiplying the two matrices.
 
     """
-    return  (np.matmul(m_a, m_b))
+    return (np.matmul(m_a, m_b))
