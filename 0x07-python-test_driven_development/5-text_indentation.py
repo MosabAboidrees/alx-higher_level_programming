@@ -5,6 +5,7 @@ after each '.', '?', or ':', and removes spaces at the beginning or end of
 each resulting line.
 """
 
+
 def text_indentation(text):
     """Prints text with two new lines after each '.', '?', or ':'.
     Leading and trailing spaces around these punctuation marks are removed.
@@ -42,7 +43,7 @@ def text_indentation(text):
 
     # Print the final formatted text, slicing off the
     # extra new lines added at the end
-    print(formatted_text[:-3],end="")
+    print(formatted_text[:-3], end="")
 
 
 if __name__ == "__main__":
