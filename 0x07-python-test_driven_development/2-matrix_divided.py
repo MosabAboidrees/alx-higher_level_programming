@@ -4,15 +4,14 @@ This module provides a function that divides all elements
 in a matrix by a given divisor.
 """
 
-
-def matrix_divided(matrix, div):
+def matrix_divided(matrix, divisor):
     """
-    Divides each element of a matrix by a div,
+    Divides each element of a matrix by a divisor,
     rounding the result to 2 decimal places.
 
     Args:
         matrix (list of list of int/float): Matrix to be divided.
-        div (int/float): Number by which matrix elements will be divided.
+        divisor (int/float): Number by which matrix elements will be divided.
 
     Returns:
         list of list of float: New matrix with
@@ -20,38 +19,34 @@ def matrix_divided(matrix, div):
 
     Raises:
         TypeError: If matrix elements are not lists of integers or floats,
-        if any element in these lists is not an integer or float,
-        if the divisor is not a number, or if rows of the matrix
-        are not the same size.
+                   if any element in these lists is not an integer or float,
+                   if the divisor is not a number, or if rows of the matrix
+                   are not the same size.
         ZeroDivisionError: If the divisor is zero.
     """
-    if not isinstance(div, (int, float)):
+    if not isinstance(divisor, (int, float)):
         raise TypeError("divisor must be a number")
 
-    if div == 0:
+    if divisor == 0:
         raise ZeroDivisionError("division by zero")
 
     error_msg = "matrix must be a matrix (list of lists) of integers/floats"
-
-    if not matrix or not isinstance(matrix, list):
-        raise TypeError(error_msg)
-
-    row_length = 0
     error_msg_size = "Each row of the matrix must have the same size"
 
-    for element in matrix:
-        if not element or not isinstance(element, list):
-            raise TypeError(error_msg)
+    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
+        raise TypeError(error_msg)
 
-        if row_length is not None and len(element) != row_length:
+    if len(matrix) == 0:
+        raise TypeError(error_msg_size)
+
+    row_length = len(matrix[0])
+
+    for row in matrix:
+        if not isinstance(row, list) or not all(isinstance(num, (int, float)) for num in row):
+            raise TypeError(error_msg)
+        if len(row) != row_length:
             raise TypeError(error_msg_size)
 
-        for num in element:
-            if not type(num) in (int, float):
-                raise TypeError(error_msg)
-
-        row_length = len(element)
-
     # Using list comprehension for clarity and conciseness
-    m = list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
-    return m
+    new_matrix = [[round(num / divisor, 2) for num in row] for row in matrix]
+    return new_matrix
