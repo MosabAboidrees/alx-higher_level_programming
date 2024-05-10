@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 #include "lists.h"
 
 /**
@@ -42,4 +39,3 @@ listint_t *insert_node(listint_t **head, int number)
 
 	return (new_node);
 }
->>>>>>> 8172198cb5123faa53f3635d6c56a46926d82eb3
