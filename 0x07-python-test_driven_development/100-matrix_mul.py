@@ -18,7 +18,6 @@ def matrix_mul(m_a, m_b):
         ValueError: If m_a or m_b can't be multiplied.
     """
 
-
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
@@ -28,7 +27,7 @@ def matrix_mul(m_a, m_b):
         if not isinstance(row, list):
             raise TypeError("m_a must be a list of lists")
         if len(row) != len(m_a[0]):
-            raise TypeError("each row of m_a must should be of the same size")
+            raise TypeError("each row of m_a must be of the same size")
         for num in row:
             if not isinstance(num, (int, float)):
                 raise TypeError("m_a should contain only integers or floats")
@@ -37,8 +36,8 @@ def matrix_mul(m_a, m_b):
         if not isinstance(row, list):
             raise TypeError("m_b must be a list of lists")
         if len(row) != len(m_b[0]):
-            raise TypeError("each row of m_b must should be of the same size")
-        for num in row: # check if the element is an int or a float
+            raise TypeError("each row of m_b must be of the same size")
+        for num in row:  # check if the element is an int or a float
             if not isinstance(num, (int, float)):
                 raise TypeError("m_b should contain only integers or floats")
 
@@ -47,13 +46,13 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0 or (len(m_b) == 1 and len(m_b[0]) == 0):
         raise ValueError("m_b can't be empty")
 
-    if len(m_a[0]) != len(m_b): # m_a columns must be equal to m_b rows
+    if len(m_a[0]) != len(m_b):  # m_a columns must be equal to m_b rows
         raise ValueError("m_a and m_b can't be multiplied")
 
     # create a list of lists with the same length as m_a
     result = [[] for i in range(len(m_a))]
 
-    for row in range(len(m_a)): # rows of m_a
+    for row in range(len(m_a)):  # rows of m_a
         for col in range(len(m_b[0])): # columns of m_b
             # c is the sum of products of the row of m_a and the column of m_b
             c = 0
