@@ -5,6 +5,6 @@ def print_last_digit(number):
     :param number: Integer whose last digit is to be printed
     :return: The last digit of the number
     """
-    last_digit = abs(number) % 10  # Use abs to handle negative numbers correctly
+    last_digit = abs(number) % 10  # Handle negative numbers correctly
     print(last_digit, end='')  # Print the last digit, stay on the same line
     return last_digit
