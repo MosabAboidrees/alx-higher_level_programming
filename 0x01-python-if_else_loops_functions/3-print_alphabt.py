@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-for char in range(97, 123):  # ASCII values for 'a' to 'z'
-    if chr(char) != 'q' and chr(char) != 'e':
-          continue
-        print("{}".format(chr(char)), end='')
+for char in range(ord('a'), ord('z') + 1):
+    if char != ord('q') and char != ord('e'):
+        print("{:c}".format(char), end="")
