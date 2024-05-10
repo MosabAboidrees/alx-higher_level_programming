@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 for i in range(25, -1, -1):
-    a = i + ord('A')
+    # Calculate the ASCII value starting from 'A' and 
+    # adjusting for cases based on index
+    char = i + ord('A')
     if i % 2 == 1:
-        a += 32
-    print("{:a}".format(a), end="")
+        char += 32  # Make lowercase if the index is odd
+    print("{:c}".format(char), end="")
