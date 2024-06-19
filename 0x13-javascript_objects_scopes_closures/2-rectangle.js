@@ -9,11 +9,8 @@ class Rectangle {
       this.width = w;
       // Initialize the instance attribute height with the value of h
       this.height = h;
-    } else {
-      // Create an empty object if w or h is 0 or not positive integers
-      return {};
     }
   }
 }
-// Export the Rectangle class to make it visible from outside
+// Export the Rectangle class to make it visible from the outside
 module.exports = Rectangle;
