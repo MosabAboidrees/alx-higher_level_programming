@@ -50,4 +50,64 @@ To execute the script and see the output:
 ./0-javascript_is_amazing.js
 ```
 
-## Task 1: First constant, first print
+## Output
+```sh
+JavaScript is amazing
+```
+
+## Task 1: 3 languages
+
+This script prints 3 lines.
+
+### File
+
+- `1-multi_languages.js`
+
+### Description
+
+This script performs the following operations:
+1. **Shebang:** Specifies the Node.js interpreter to run the script.
+2. **Printing:** Uses `console.log(...)` to print three lines:
+    - The first line: "C is fun"
+    - The second line: "Python is cool"
+    - The third line: "JavaScript is amazing"
+
+### Instructions
+
+1. **Create the script file:**
+    - Use `vim`, `vi`, or `emacs` to create and edit the file `1-multi_languages.js`.
+
+2. **Add the required content to `1-multi_languages.js`.**
+
+3. **Save and exit the editor:**
+    - For `vim` or `vi`: Press `Esc`, then type `:wq` and press `Enter`.
+    - For `emacs`: Press `Ctrl-x` `Ctrl-s` to save, then `Ctrl-x` `Ctrl-c` to exit.
+
+4. **Make the file executable:**
+    ```sh
+    chmod +x 1-multi_languages.js
+    ```
+
+5. **Run semistandard to check for code compliance:**
+    ```sh
+    semistandard --fix 1-multi_languages.js
+    ```
+
+6. **Check the length of the file:**
+    ```sh
+    wc -l 1-multi_languages.js
+    ```
+
+### Example
+
+To execute the script and see the output:
+```sh
+./1-multi_languages.js
+```
+
+## Output
+```sh
+C is fun
+Python is cool
+JavaScript is amazing
+```
