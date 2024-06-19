@@ -1,3 +1,4 @@
+#!/usr/bin/node
 // Define a function that executes another function x times
 function callMeMoby(x, theFunction) {
 	// Loop x times
