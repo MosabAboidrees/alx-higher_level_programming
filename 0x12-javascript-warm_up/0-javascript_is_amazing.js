@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/bin/usr/node
 
 // Declare a constant variable called myVar and
 // assign it the value "JavaScript is amazing"
