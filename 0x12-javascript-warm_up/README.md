@@ -166,3 +166,59 @@ To execute the script and see the output:
 
 ## Output
 ```sh
+No argument
+```
+
+## Task 3: Value of my argument
+
+This script prints the first argument passed to it.
+
+### File
+
+- `3-value_argument.js`
+
+### Description
+
+This script performs the following operations:
+1. **Shebang:** Specifies the Node.js interpreter to run the script.
+2. **Argument Handling:** Uses `process.argv` to get the arguments passed to the script.
+3. **Conditional Printing:** Prints the first argument if provided; otherwise, prints "No argument".
+
+### Instructions
+
+1. **Create the script file:**
+    - Use `vim`, `vi`, or `emacs` to create and edit the file `3-value_argument.js`.
+
+2. **Add the required content to `3-value_argument.js`.**
+
+3. **Save and exit the editor:**
+    - For `vim` or `vi`: Press `Esc`, then type `:wq` and press `Enter`.
+    - For `emacs`: Press `Ctrl-x` `Ctrl-s` to save, then `Ctrl-x` `Ctrl-c` to exit.
+
+4. **Make the file executable:**
+    ```sh
+    chmod +x 3-value_argument.js
+    ```
+
+5. **Run semistandard to check for code compliance:**
+    ```sh
+    semistandard --fix 3-value_argument.js
+    ```
+
+6. **Check the length of the file:**
+    ```sh
+    wc -l 3-value_argument.js
+    ```
+
+### Example
+
+To execute the script and see the output:
+```sh
+./3-value_argument.js
+```
+
+## Output
+```sh
+No argument
+```
+
