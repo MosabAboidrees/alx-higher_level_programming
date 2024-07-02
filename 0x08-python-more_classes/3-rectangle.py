@@ -56,6 +56,8 @@ class Rectangle:
         """Return the printable representation of the rectangle.
         Represents the rectangle with the character '#'.
         """
-        if self.__width != 0 or self.__height != 0:
-            return ""
-        return "\n".join(["#" * self.__width for _ in range(self.__height)])
+        rectangle = ""
+        if self.__width != 0 and self.__height != 0:
+            rectangle += "\n".join("#" *
+                                   self.__width for j in range(self.__height))
+        return rectangle
