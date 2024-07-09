@@ -6,12 +6,14 @@ and displays the body of the response.
 import urllib.request
 
 
-url = 'https://alx-intranet.hbtn.io/status'
+if __name__ == "__main__":
+    url = "https://alx-intranet.hbtn.io/status"
+    try:
+        with urllib.request.urlopen(url) as response:
+            body = response.read()
 
-with urllib.request.urlopen(url) as response:
-    body = response.read()
-
-print("Body response:")
-print("\t- type: {}".format(type(body)))
-print("\t- content: {}".format(body))
-print("\t- utf8 content: {}".format(body.decode('utf-8')))
+            print("\t- type:", type(body))
+            print("\t- content:", body)
+            print("\t- utf8 content:", body.decode('utf-8'))
+    except Exception as e:
+        print("Error:", e)
