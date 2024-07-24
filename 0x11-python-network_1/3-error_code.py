@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Takes in a URL, sends a request to the URL, and displays the body of the response
-(decoded in utf-8). Manages urllib.error.HTTPError exceptions and prints the
-error code when an HTTP error occurs.
+Takes in a URL, sends a request to the URL,
+and displays the body of the response
+(decoded in utf-8). Manages urllib.error.HTTPError exceptions
+and prints the error code when an HTTP error occurs.
 """
 import urllib.request
 import urllib.error
