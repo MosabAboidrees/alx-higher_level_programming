@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     # Send a request to the URL
     response = requests.get(url)
-    
+
     # Get the value of 'X-Request-Id' from the response headers
     x_request_id = response.headers.get('X-Request-Id')
 
