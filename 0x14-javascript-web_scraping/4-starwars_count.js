@@ -3,6 +3,7 @@
 
 const request = require('request');
 const apiUrl = process.argv[2];
+const wedgeAntillesId = '18';
 
 if (!apiUrl) {
   console.error('Error: No API URL provided');
@@ -12,23 +13,18 @@ if (!apiUrl) {
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
-    return;
+  } else {
+    const films = JSON.parse(body).results;
+    let count = 0;
+
+    films.forEach(film => {
+      film.characters.forEach(character => {
+        if (character.endsWith(`/${wedgeAntillesId}/`)) {
+          count++;
+        }
+      });
+    });
+
+    console.log(count);
   }
-
-  if (response.statusCode !== 200) {
-    console.error(`Error: ${response.statusCode}`);
-    return;
-  }
-
-  const films = JSON.parse(body).results;
-  const wedgeId = '18';
-  let count = 0;
-
-  films.forEach((film) => {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${wedgeId}/`)) {
-      count++;
-    }
-  });
-
-  console.log(count);
 });
